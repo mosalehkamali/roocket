@@ -1,0 +1,19 @@
+.navbar{
+    padding-top: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+}
+
+.topNav{
+    background-color: var(--main-bg-color);
+    padding: 2.25rem 2.75rem;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 10px 10px 1000px var(--shadow-color);
+    border-radius: 1rem;
+}
