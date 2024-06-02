@@ -17,3 +17,76 @@
     box-shadow: 10px 10px 1000px var(--shadow-color);
     border-radius: 1rem;
 }
+
+.logo>a{
+    font-size: 2.5rem;
+    display: flex;
+    gap:1rem;
+}
+
+.logo>a>img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.searchBar{
+    width: 60%;
+    position: relative;
+}
+
+.searchBar >input{
+    background-color: var(--card-bg-color);
+    outline: none;
+    border: 0;
+    border-radius: .75rem;
+    font-size: .75rem;
+    line-height: 1rem;
+    padding: 1rem 3rem 1rem 12px;
+    color: var(--text-color);
+    width: 100%;
+}
+
+.searchBar> button {
+    position: absolute;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    outline: none;
+    border: 0;
+    border-radius: .75rem;
+    z-index: 1000;
+    top: 30%;
+    right: 1rem;
+}
+
+.searchBar> button>svg{
+    width: 20px;
+    height: 20px;
+}
+
+.loginRegister{
+    display: flex;
+}
+
+.loginBtn,.registerBtn{
+    font-family: yekanHeavy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5rem;
+    font-weight: 500;
+    padding: .4rem .75rem ;
+}
+
+.loginBtn{
+    background-color: #1f3958;
+    color: #3B82F6;
+    border-radius:0 .5rem .5rem 0;
+}
+
+.registerBtn{
+    color: var(--text-color);
+    border-radius: .5rem;
+    background-color: var(--button-color);
+    width: 100%;
+}

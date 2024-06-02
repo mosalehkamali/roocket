@@ -15,7 +15,15 @@ function Navbar() {
 
         <div className={styles.topNav}>
           <div className={styles.logo}>
-            <Link href={"/"}>ROOCKET</Link>
+            <Link href={"/"}>
+                <p>ROOCKET</p>
+                <Image
+                  width={200}
+                  height={200}
+                  src="/images/logo.jpg"
+                  alt="png"
+                ></Image>
+            </Link>
           </div>
 
           <div className={styles.searchBar}>
@@ -26,11 +34,11 @@ function Navbar() {
           </div>
 
           <div className={styles.loginRegister}>
-            <Link href={"/"}>
+            <Link className={styles.loginBtn} href={"/"}>
               <p>ورود</p>
               <IoLogIn />
             </Link>
-            <Link href={"/"}>
+            <Link className={styles.registerBtn} href={"/"}>
               <p>عضویت</p>
               <TiUserAdd />
             </Link>
@@ -63,7 +71,7 @@ function Navbar() {
         </div>
 
         <div className={styles.bottonNav}></div>
-        
+
       </nav>
     </>
   );
