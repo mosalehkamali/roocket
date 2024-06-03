@@ -1,0 +1,61 @@
+.header {
+  margin-top: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 3rem;
+  gap: 1rem;
+}
+
+.textContaner{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.headerTitle {
+  font-size: 3.75rem;
+  max-width: 90%;
+  font-family: yekanFat;
+}
+
+.headerDisc {
+  color: var(--button-hover-color-gray);
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.startLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: var(--button-color);
+  padding: 1.25rem 1.75rem;
+  border-radius: 0.5rem;
+  font-size: 20px;
+  width: 18rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.startLink1 {
+  background-color: var(--darker-gray);
+}
+
+.featuresForm {
+  font-family: yekanHeavy;
+  font-size: 1.3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.featuresItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.featuresItem > svg {
+  width: 30px !important;
+  height: 30px !important;
+}

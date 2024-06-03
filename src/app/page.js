@@ -1,10 +1,11 @@
 import Navbar from "@/components/modules/navbar/Navbar";
+import Header from "@/components/templates/index/header/Header";
 
 export default function Home() {
   return (
     <>
-    <Navbar />
-   <h1>roocket main page</h1>
+      <Navbar />
+      <Header />
     </>
   );
 }

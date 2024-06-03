@@ -6,6 +6,7 @@
   --link-hover-color: #cbd1db;
   --button-hover-color-gray: #c2c6cc;
   --button-color: #4283ed;
+  --darker-gray: #374151;
   --shadow-color: rgba(255, 255, 255, 0.425);
 }
 
@@ -16,6 +17,11 @@
 @font-face {
   font-family: yekanHeavy;
   src: url(/fonts/YekanBakh-Heavy.woff);
+}
+
+@font-face {
+  font-family: yekanFat;
+  src: url(/fonts/YekanBakh-Fat.woff);
 }
 
 ::placeholder {
