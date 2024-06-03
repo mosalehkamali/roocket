@@ -2,14 +2,15 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { LuSearch,LuGraduationCap } from "react-icons/lu";
+import { LuSearch, LuGraduationCap,LuWallet ,LuFileQuestion  } from "react-icons/lu";
 import { PiHandbagFill } from "react-icons/pi";
 import { HiBell } from "react-icons/hi";
 import { TiUserAdd } from "react-icons/ti";
-import { IoLogIn } from "react-icons/io5";
+import { IoLogIn,IoVideocamOutline  } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { FaRoute } from "react-icons/fa";
+import { FaRoute,FaRegUserCircle  } from "react-icons/fa";
 import { LiaSwatchbookSolid } from "react-icons/lia";
+import { IoIosLogOut } from "react-icons/io";
 
 function Navbar() {
   return (
@@ -34,7 +35,7 @@ function Navbar() {
             </button>
             <input type="text" placeholder="دنبال چی میگردی ؟" />
           </div>
-
+          {/* 
           <div className={styles.loginRegister}>
             <Link className={styles.loginBtn} href={"/"}>
               <p>ورود</p>
@@ -44,16 +45,18 @@ function Navbar() {
               <p>عضویت</p>
               <TiUserAdd />
             </Link>
-          </div>
+          </div> */}
 
           {/* acount details section */}
-          {/* <div className={styles.acountBtns}>
+          <div className={styles.acountBtns}>
             <div className={styles.cardsBtn}>
+              <span>1</span>
               <Link href={"/"}>
                 <PiHandbagFill />
               </Link>
             </div>
             <div className={styles.cardsBtn}>
+              <span>1</span>
               <Link href={"/"}>
                 <HiBell />
               </Link>
@@ -67,9 +70,35 @@ function Navbar() {
                   src="/images/default-profile.png"
                   alt="png"
                 ></Image>
+                <div className={styles.dropDownBox}>
+                  <ul className={styles.acountDropDownList}>
+                    <li className={styles.dropDownListItem}>
+                    <FaRegUserCircle />
+
+                      <Link href={"/"}>پنل کاربری</Link>
+                    </li>
+                    <li className={styles.dropDownListItem}>
+                    <IoVideocamOutline />
+                      <Link href={"/"}>دوره ها</Link>
+                    </li>
+                    <li className={styles.dropDownListItem}>
+                    <LuWallet />
+
+                      <Link href={"/"}>مالی و اشتراک</Link>
+                    </li>
+                    <li className={styles.dropDownListItem}>
+                    <LuFileQuestion />
+                      <Link href={"/"}>پرسش ها</Link>
+                    </li>
+                    <li className={styles.dropDownListItem}>
+                    <IoIosLogOut />
+                      <Link href={"/"}>خروج از حساب</Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
 
         <div className={styles.bottonNav}>
@@ -86,29 +115,29 @@ function Navbar() {
                 <ul className={styles.coursesDropDownList}>
                   <li className={styles.coursesDropDownListItem}>
                     <Link className={styles.coursesDropDownLink} href={"/"}>
-                    <LiaSwatchbookSolid style={{"color":"#9018EE"}}/>
-                     <div className={styles.coursesDropDownText}>
-                       <h4>دوره های آموزشی</h4>
-                      <p>لیست دوره های آموزشی ویدیویی راکت</p>
-                     </div>
+                      <LiaSwatchbookSolid style={{ color: "#9018EE" }} />
+                      <div className={styles.coursesDropDownText}>
+                        <h4>دوره های آموزشی</h4>
+                        <p>لیست دوره های آموزشی ویدیویی راکت</p>
+                      </div>
                     </Link>
                   </li>
                   <li className={styles.coursesDropDownListItem}>
                     <Link className={styles.coursesDropDownLink} href={"/"}>
-                    <FaRoute style={{"color":"#FFA826"}}/>
-                     <div className={styles.coursesDropDownText}>
-                       <h4>مسیرهای یادگیری</h4>{" "}
-                      <p>مسیرهای یادگیری قدم به قدم برنامه نویسی</p>
-                     </div>
+                      <FaRoute style={{ color: "#FFA826" }} />
+                      <div className={styles.coursesDropDownText}>
+                        <h4>مسیرهای یادگیری</h4>{" "}
+                        <p>مسیرهای یادگیری قدم به قدم برنامه نویسی</p>
+                      </div>
                     </Link>
                   </li>
                   <li className={styles.coursesDropDownListItem}>
                     <Link className={styles.coursesDropDownLink} href={"/"}>
-                    <LuGraduationCap style={{"color":"#E01C4C"}}/>
-                     <div className={styles.coursesDropDownText}>
-                       <h4>گواهی پایان دوره</h4>{" "}
-                      <p>گواهی تاییدیه کسب مهارت فنی دوره ها</p>
-                     </div>
+                      <LuGraduationCap style={{ color: "#E01C4C" }} />
+                      <div className={styles.coursesDropDownText}>
+                        <h4>گواهی پایان دوره</h4>{" "}
+                        <p>گواهی تاییدیه کسب مهارت فنی دوره ها</p>
+                      </div>
                     </Link>
                   </li>
                 </ul>

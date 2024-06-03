@@ -139,6 +139,19 @@
   cursor: pointer;
   background-color: var(--card-bg-color);
   transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.cardsBtn > span {
+  position: absolute;
+  bottom: 75%;
+  left: 70%;
+  background-color: #e01c4c;
+  border-radius: 50%;
+  width: 1.3rem;
+  height: 1.3rem;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .cardsBtn > a > svg {
@@ -200,7 +213,8 @@
   cursor: pointer;
 }
 
-.dropDownList {
+.dropDownList,
+.acountDropDownList {
   position: absolute;
   left: 0;
   right: 0;
@@ -216,6 +230,14 @@
   padding: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dropDownListItem>svg{
+  width: 20px !important;
+  height: 20px !important;
 }
 
 .dropDownListItem:hover {
@@ -261,4 +283,8 @@
   font-family: yekanReg;
   font-size: 0.85rem;
   color: var(--button-hover-color-gray);
+}
+
+.acountDropDownList{
+  right: -150px !important;
 }
