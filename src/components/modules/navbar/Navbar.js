@@ -2,12 +2,14 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { LuSearch } from "react-icons/lu";
+import { LuSearch,LuGraduationCap } from "react-icons/lu";
 import { PiHandbagFill } from "react-icons/pi";
 import { HiBell } from "react-icons/hi";
 import { TiUserAdd } from "react-icons/ti";
 import { IoLogIn } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { FaRoute } from "react-icons/fa";
+import { LiaSwatchbookSolid } from "react-icons/lia";
 
 function Navbar() {
   return (
@@ -80,6 +82,37 @@ function Navbar() {
                 دوره های آموزشی
                 <MdKeyboardArrowDown />
               </span>
+              <div className={styles.dropDownBox}>
+                <ul className={styles.coursesDropDownList}>
+                  <li className={styles.coursesDropDownListItem}>
+                    <Link className={styles.coursesDropDownLink} href={"/"}>
+                    <LiaSwatchbookSolid style={{"color":"#9018EE"}}/>
+                     <div className={styles.coursesDropDownText}>
+                       <h4>دوره های آموزشی</h4>
+                      <p>لیست دوره های آموزشی ویدیویی راکت</p>
+                     </div>
+                    </Link>
+                  </li>
+                  <li className={styles.coursesDropDownListItem}>
+                    <Link className={styles.coursesDropDownLink} href={"/"}>
+                    <FaRoute style={{"color":"#FFA826"}}/>
+                     <div className={styles.coursesDropDownText}>
+                       <h4>مسیرهای یادگیری</h4>{" "}
+                      <p>مسیرهای یادگیری قدم به قدم برنامه نویسی</p>
+                     </div>
+                    </Link>
+                  </li>
+                  <li className={styles.coursesDropDownListItem}>
+                    <Link className={styles.coursesDropDownLink} href={"/"}>
+                    <LuGraduationCap style={{"color":"#E01C4C"}}/>
+                     <div className={styles.coursesDropDownText}>
+                       <h4>گواهی پایان دوره</h4>{" "}
+                      <p>گواهی تاییدیه کسب مهارت فنی دوره ها</p>
+                     </div>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li className={styles.navListLink}>
               <Link href={"/"}>پرسش و پاسخ ها</Link>
