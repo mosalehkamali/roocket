@@ -33,7 +33,7 @@ function Navbar() {
             <input type="text" placeholder="دنبال چی میگردی ؟" />
           </div>
 
-          <div className={styles.loginRegister}>
+          {/* <div className={styles.loginRegister}>
             <Link className={styles.loginBtn} href={"/"}>
               <p>ورود</p>
               <IoLogIn />
@@ -42,10 +42,10 @@ function Navbar() {
               <p>عضویت</p>
               <TiUserAdd />
             </Link>
-          </div>
+          </div> */}
 
           {/* acount details section */}
-          {/* <div className={styles.acountBtns}>
+          <div className={styles.acountBtns}>
             <div className={styles.cardsBtn}>
               <Link href={"/"}>
                 <PiHandbagFill />
@@ -67,7 +67,7 @@ function Navbar() {
                 ></Image>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
 
         <div className={styles.bottonNav}></div>

@@ -1,119 +1,163 @@
-.navbar{
-    padding-top: 1rem;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
+.navbar {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
 }
 
-.topNav{
-    background-color: var(--main-bg-color);
-    padding: 2.25rem 2.75rem;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 10px 10px 1000px var(--shadow-color);
-    border-radius: 1rem;
+.topNav {
+  background-color: var(--main-bg-color);
+  padding: 2.25rem 2.75rem;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 10px 10px 1000px var(--shadow-color);
+  border-radius: 1rem;
 }
 
-.logo>a{
-    font-size: 2.5rem;
-    display: flex;
-    gap:1rem;
+.logo > a {
+  font-size: 2.5rem;
+  display: flex;
+  gap: 1rem;
 }
 
-.logo>a>img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.logo > a > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
-.searchBar{
-    width: 60%;
-    position: relative;
+.searchBar {
+  width: 50%;
+  position: relative;
 }
 
-.searchBar >input{
-    background-color: var(--card-bg-color);
-    outline: none;
-    border: 0;
-    border-radius: .75rem;
-    font-size: .75rem;
-    line-height: 1rem;
-    padding: 1rem 3rem 1rem 12px;
+.searchBar > input {
+  background-color: var(--card-bg-color);
+  outline: none;
+  border: 0;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: 1rem 3rem 1rem 12px;
+  color: var(--text-color);
+  width: 100%;
+}
+
+.searchBar > button {
+  position: absolute;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  outline: none;
+  border: 0;
+  border-radius: 0.75rem;
+  z-index: 1000;
+  top: 30%;
+  right: 1rem;
+}
+
+.searchBar > button > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.loginRegister {
+  display: flex;
+}
+
+.loginBtn,
+.registerBtn {
+  font-family: yekanHeavy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  line-height: 1.5rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.loginBtn {
+  background-color: #1f3958;
+  color: #3b82f6;
+  border-radius: 0 0.5rem 0.5rem 0;
+  position: relative;
+}
+
+.loginBtn:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 10px;
+  color: #3b82f6;
+  background-color: #1f3958;
+  left: -14%;
+  transition: all 0.2s ease-in-out;
+}
+
+.loginBtn:hover {
+  background-color: #3371d4;
+  color: var(--text-color);
+}
+.loginBtn:hover:after {
+  background-color: #3371d4;
+  color: var(--text-color);
+}
+.registerBtn {
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  background-color: var(--button-color);
+  width: 100%;
+  z-index: 1000;
+}
+
+.registerBtn:hover {
+  background-color: #3371d4;
+}
+
+/* navbar acount section styles start */
+.acountBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.cardsBtn,
+.profileImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--card-bg-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.cardsBtn>a>svg{
     color: var(--text-color);
-    width: 100%;
-}
-
-.searchBar> button {
-    position: absolute;
-    background-color: var(--card-bg-color);
-    color: var(--text-color);
-    outline: none;
-    border: 0;
-    border-radius: .75rem;
-    z-index: 1000;
-    top: 30%;
-    right: 1rem;
-}
-
-.searchBar> button>svg{
+    margin-top: 10px;
     width: 20px;
     height: 20px;
 }
 
-.loginRegister{
-    display: flex;
+.cardsBtn:hover{
+    background-color: var(--button-hover-color-gray);
 }
 
-.loginBtn,.registerBtn{
-    font-family: yekanHeavy;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    line-height: 1.5rem;
-    font-weight: 500;
-    padding: .4rem .75rem ;
-    transition: all .2s ease-in-out;
+.cardsBtn:hover.cardsBtn>a>svg {
+    color: var(--main-bg-color);
 }
 
-.loginBtn{
-    background-color: #1f3958;
-    color: #3B82F6;
-    border-radius:0 .5rem .5rem 0;
-    position: relative;
-}
-
-.loginBtn:after{
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 10px;
-    color: #3B82F6;
-    background-color: #1f3958;
-    left: -14%;
-    transition: all .2s ease-in-out;
-}
-
-.loginBtn:hover{
-    background-color: #3371D4;
-    color: var(--text-color);
-}
-.loginBtn:hover:after{
-    background-color: #3371D4;
-    color: var(--text-color);
-}
-.registerBtn{
-    color: var(--text-color);
-    border-radius: .5rem;
-    background-color: var(--button-color);
-    width: 100%;
-    z-index: 1000;
-}
-
-.registerBtn:hover{
-    background-color: #3371D4;
+.profileImg > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
