@@ -1,18 +1,28 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { LuSearch, LuGraduationCap,LuWallet ,LuFileQuestion  } from "react-icons/lu";
+import {
+  LuSearch,
+  LuGraduationCap,
+  LuWallet,
+  LuFileQuestion,
+} from "react-icons/lu";
 import { PiHandbagFill } from "react-icons/pi";
 import { HiBell } from "react-icons/hi";
 import { TiUserAdd } from "react-icons/ti";
-import { IoLogIn,IoVideocamOutline  } from "react-icons/io5";
+import { IoLogIn, IoVideocamOutline } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { FaRoute,FaRegUserCircle  } from "react-icons/fa";
+import { FaRoute, FaRegUserCircle } from "react-icons/fa";
 import { LiaSwatchbookSolid } from "react-icons/lia";
 import { IoIosLogOut } from "react-icons/io";
 
 function Navbar() {
+  const [acountDropDown, setAcountDropDown] = useState(false);
+  const [coursesDropDown, setCoursesDropDown] = useState(false);
+  const [linksDropDown, setLinksDropDown] = useState(false);
   return (
     <>
       <nav className={styles.navbar}>
@@ -63,39 +73,44 @@ function Navbar() {
             </div>
 
             <div className={styles.myAcount}>
-              <div className={styles.profileImg}>
+              <div
+                className={styles.profileImg}
+                onClick={() => setAcountDropDown(!acountDropDown)}
+              >
                 <Image
                   width={200}
                   height={200}
                   src="/images/default-profile.png"
                   alt="png"
                 ></Image>
-                <div className={styles.dropDownBox}>
-                  <ul className={styles.acountDropDownList}>
-                    <li className={styles.dropDownListItem}>
-                    <FaRegUserCircle />
+                {acountDropDown && (
+                  <div className={styles.dropDownBox}>
+                    <ul className={styles.acountDropDownList}>
+                      <li className={styles.dropDownListItem}>
+                        <FaRegUserCircle />
 
-                      <Link href={"/"}>پنل کاربری</Link>
-                    </li>
-                    <li className={styles.dropDownListItem}>
-                    <IoVideocamOutline />
-                      <Link href={"/"}>دوره ها</Link>
-                    </li>
-                    <li className={styles.dropDownListItem}>
-                    <LuWallet />
+                        <Link href={"/"}>پنل کاربری</Link>
+                      </li>
+                      <li className={styles.dropDownListItem}>
+                        <IoVideocamOutline />
+                        <Link href={"/"}>دوره ها</Link>
+                      </li>
+                      <li className={styles.dropDownListItem}>
+                        <LuWallet />
 
-                      <Link href={"/"}>مالی و اشتراک</Link>
-                    </li>
-                    <li className={styles.dropDownListItem}>
-                    <LuFileQuestion />
-                      <Link href={"/"}>پرسش ها</Link>
-                    </li>
-                    <li className={styles.dropDownListItem}>
-                    <IoIosLogOut />
-                      <Link href={"/"}>خروج از حساب</Link>
-                    </li>
-                  </ul>
-                </div>
+                        <Link href={"/"}>مالی و اشتراک</Link>
+                      </li>
+                      <li className={styles.dropDownListItem}>
+                        <LuFileQuestion />
+                        <Link href={"/"}>پرسش ها</Link>
+                      </li>
+                      <li className={styles.dropDownListItem}>
+                        <IoIosLogOut />
+                        <Link href={"/"}>خروج از حساب</Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -106,42 +121,47 @@ function Navbar() {
             <li className={styles.navListLink}>
               <Link href={"/"}>راکت</Link>
             </li>
-            <li className={styles.navListLink}>
+            <li
+              className={styles.navListLink}
+              onClick={() => setCoursesDropDown(!coursesDropDown)}
+            >
               <span className={styles.dropDown}>
                 دوره های آموزشی
                 <MdKeyboardArrowDown />
               </span>
-              <div className={styles.dropDownBox}>
-                <ul className={styles.coursesDropDownList}>
-                  <li className={styles.coursesDropDownListItem}>
-                    <Link className={styles.coursesDropDownLink} href={"/"}>
-                      <LiaSwatchbookSolid style={{ color: "#9018EE" }} />
-                      <div className={styles.coursesDropDownText}>
-                        <h4>دوره های آموزشی</h4>
-                        <p>لیست دوره های آموزشی ویدیویی راکت</p>
-                      </div>
-                    </Link>
-                  </li>
-                  <li className={styles.coursesDropDownListItem}>
-                    <Link className={styles.coursesDropDownLink} href={"/"}>
-                      <FaRoute style={{ color: "#FFA826" }} />
-                      <div className={styles.coursesDropDownText}>
-                        <h4>مسیرهای یادگیری</h4>{" "}
-                        <p>مسیرهای یادگیری قدم به قدم برنامه نویسی</p>
-                      </div>
-                    </Link>
-                  </li>
-                  <li className={styles.coursesDropDownListItem}>
-                    <Link className={styles.coursesDropDownLink} href={"/"}>
-                      <LuGraduationCap style={{ color: "#E01C4C" }} />
-                      <div className={styles.coursesDropDownText}>
-                        <h4>گواهی پایان دوره</h4>{" "}
-                        <p>گواهی تاییدیه کسب مهارت فنی دوره ها</p>
-                      </div>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              {coursesDropDown && (
+                <div className={styles.dropDownBox}>
+                  <ul className={styles.coursesDropDownList}>
+                    <li className={styles.coursesDropDownListItem}>
+                      <Link className={styles.coursesDropDownLink} href={"/"}>
+                        <LiaSwatchbookSolid style={{ color: "#9018EE" }} />
+                        <div className={styles.coursesDropDownText}>
+                          <h4>دوره های آموزشی</h4>
+                          <p>لیست دوره های آموزشی ویدیویی راکت</p>
+                        </div>
+                      </Link>
+                    </li>
+                    <li className={styles.coursesDropDownListItem}>
+                      <Link className={styles.coursesDropDownLink} href={"/"}>
+                        <FaRoute style={{ color: "#FFA826" }} />
+                        <div className={styles.coursesDropDownText}>
+                          <h4>مسیرهای یادگیری</h4>{" "}
+                          <p>مسیرهای یادگیری قدم به قدم برنامه نویسی</p>
+                        </div>
+                      </Link>
+                    </li>
+                    <li className={styles.coursesDropDownListItem}>
+                      <Link className={styles.coursesDropDownLink} href={"/"}>
+                        <LuGraduationCap style={{ color: "#E01C4C" }} />
+                        <div className={styles.coursesDropDownText}>
+                          <h4>گواهی پایان دوره</h4>{" "}
+                          <p>گواهی تاییدیه کسب مهارت فنی دوره ها</p>
+                        </div>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </li>
             <li className={styles.navListLink}>
               <Link href={"/"}>پرسش و پاسخ ها</Link>
@@ -152,23 +172,28 @@ function Navbar() {
             <li className={styles.navListLink}>
               <Link href={"/"}>راکت کست</Link>
             </li>
-            <li className={styles.navListLink}>
+            <li
+              className={styles.navListLink}
+              onClick={() => setLinksDropDown(!linksDropDown)}
+            >
               <span className={styles.dropDown}>
                 <Link href={"/"}>لینک های مفید</Link>
                 <MdKeyboardArrowDown />
-                <div className={styles.dropDownBox}>
-                  <ul className={styles.dropDownList}>
-                    <li className={styles.dropDownListItem}>
-                      <Link href={"/"}>سوالات متداول</Link>
-                    </li>
-                    <li className={styles.dropDownListItem}>
-                      <Link href={"/"}>درباره ما</Link>
-                    </li>
-                    <li className={styles.dropDownListItem}>
-                      <Link href={"/"}>ارتباط با ما</Link>
-                    </li>
-                  </ul>
-                </div>
+                {linksDropDown && (
+                  <div className={styles.dropDownBox}>
+                    <ul className={styles.dropDownList}>
+                      <li className={styles.dropDownListItem}>
+                        <Link href={"/"}>سوالات متداول</Link>
+                      </li>
+                      <li className={styles.dropDownListItem}>
+                        <Link href={"/"}>درباره ما</Link>
+                      </li>
+                      <li className={styles.dropDownListItem}>
+                        <Link href={"/"}>ارتباط با ما</Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
               </span>
             </li>
           </ul>
