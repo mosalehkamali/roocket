@@ -1,12 +1,12 @@
-:root{
-  --main-bg-color:#0E2338;
-  --bg-side-color:#0C243E;
-  --card-bg-color:#1B314C;
-  --text-color:#FFFFFF;
-  --link-hover-color:#CBD1DB;
-  --button-hover-color-gray:#C2C6CC;
-  --button-color:#4283ED;
-  --shadow-color:rgba(255, 255, 255, 0.425);;
+:root {
+  --main-bg-color: #0e2338;
+  --bg-side-color: #0c243e;
+  --card-bg-color: #1b314c;
+  --text-color: #ffffff;
+  --link-hover-color: #cbd1db;
+  --button-hover-color-gray: #c2c6cc;
+  --button-color: #4283ed;
+  --shadow-color: rgba(255, 255, 255, 0.425);
 }
 
 @font-face {
@@ -17,8 +17,8 @@
   font-family: yekanHeavy;
   src: url(/fonts/YekanBakh-Heavy.woff);
 }
- 
-::placeholder{
+
+::placeholder {
   color: var(--text-color);
   font-family: yekanReg;
 }
@@ -39,11 +39,15 @@ body {
   color: var(--text-color);
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--text-color);
 }
 
-input{
+input {
   font-family: yekanReg;
+}
+
+li {
+  list-style-type: none;
 }

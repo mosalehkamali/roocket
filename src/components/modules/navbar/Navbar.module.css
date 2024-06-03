@@ -9,12 +9,12 @@
 
 .topNav {
   background-color: var(--main-bg-color);
-  padding: 2.25rem 2.75rem;
+  padding: 2rem 2.75rem;
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 10px 10px 1000px var(--shadow-color);
+  box-shadow: 0 100px 2000px var(--shadow-color);
   border-radius: 1rem;
 }
 
@@ -117,6 +117,7 @@
 
 .registerBtn:hover {
   background-color: #3371d4;
+  color: var(--button-hover-color-gray);
 }
 
 /* navbar acount section styles start */
@@ -160,4 +161,63 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+}
+
+/* navbar botton sectin styles */
+
+.bottonNav{
+  font-family: yekanHeavy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-side-color);
+  padding: 1.25rem 0;
+  border-radius: 0 0 1.5rem 1.5rem;
+  width: 80%;
+}
+
+.navLinks{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.dropDown{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropDown>svg{
+  width: 20px;
+  height: 20px;
+}
+
+.navListLink{
+  position: relative;
+  cursor: pointer;
+}
+
+.dropDownList{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  background-color: var(--bg-side-color);
+  padding: .75rem;
+  border-radius: .5rem;
+  width: 12rem;
+}
+
+.dropDownListItem{
+  line-height: 1.75rem;
+  padding: 1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.dropDownListItem:hover{
+  background-color: var(--main-bg-color);
 }

@@ -7,22 +7,22 @@ import { PiHandbagFill } from "react-icons/pi";
 import { HiBell } from "react-icons/hi";
 import { TiUserAdd } from "react-icons/ti";
 import { IoLogIn } from "react-icons/io5";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 function Navbar() {
   return (
     <>
       <nav className={styles.navbar}>
-
         <div className={styles.topNav}>
           <div className={styles.logo}>
             <Link href={"/"}>
-                <p>ROOCKET</p>
-                <Image
-                  width={200}
-                  height={200}
-                  src="/images/logo.jpg"
-                  alt="png"
-                ></Image>
+              <p>ROOCKET</p>
+              <Image
+                width={200}
+                height={200}
+                src="/images/logo.jpg"
+                alt="png"
+              ></Image>
             </Link>
           </div>
 
@@ -33,7 +33,7 @@ function Navbar() {
             <input type="text" placeholder="دنبال چی میگردی ؟" />
           </div>
 
-          {/* <div className={styles.loginRegister}>
+          <div className={styles.loginRegister}>
             <Link className={styles.loginBtn} href={"/"}>
               <p>ورود</p>
               <IoLogIn />
@@ -42,10 +42,10 @@ function Navbar() {
               <p>عضویت</p>
               <TiUserAdd />
             </Link>
-          </div> */}
+          </div>
 
           {/* acount details section */}
-          <div className={styles.acountBtns}>
+          {/* <div className={styles.acountBtns}>
             <div className={styles.cardsBtn}>
               <Link href={"/"}>
                 <PiHandbagFill />
@@ -67,11 +67,50 @@ function Navbar() {
                 ></Image>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <div className={styles.bottonNav}></div>
-
+        <div className={styles.bottonNav}>
+          <ul className={styles.navLinks}>
+            <li className={styles.navListLink}>
+              <Link href={"/"}>راکت</Link>
+            </li>
+            <li className={styles.navListLink}>
+              <span className={styles.dropDown}>
+                دوره های آموزشی
+                <MdKeyboardArrowDown />
+              </span>
+            </li>
+            <li className={styles.navListLink}>
+              <Link href={"/"}>پرسش و پاسخ ها</Link>
+            </li>
+            <li className={styles.navListLink}>
+              <Link href={"/"}>مقالات</Link>
+            </li>
+            <li className={styles.navListLink}>
+              <Link href={"/"}>راکت کست</Link>
+            </li>
+            <li className={styles.navListLink}>
+              <span className={styles.dropDown}>
+                <Link href={"/"}>لینک های مفید</Link>
+                <MdKeyboardArrowDown />
+                <div className={styles.dropDownBox}>
+                  <ul className={styles.dropDownList}>
+                    <li className={styles.dropDownListItem}>
+                      <Link href={"/"}>سوالات متداول</Link>
+                    </li>
+                    <li className={styles.dropDownListItem}>
+                      <Link href={"/"}>درباره ما</Link>
+                    </li>
+                    <li className={styles.dropDownListItem}>
+                      <Link href={"/"}>ارتباط با ما</Link>
+                    </li>
+                  </ul>
+                </div>
+              </span>
+            </li>
+          </ul>
+        </div>
       </nav>
     </>
   );
