@@ -73,9 +73,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     line-height: 1.5rem;
     font-weight: 500;
     padding: .4rem .75rem ;
+    transition: all .2s ease-in-out;
 }
 
 .loginBtn{
@@ -92,13 +94,26 @@
     width: 10px;
     color: #3B82F6;
     background-color: #1f3958;
-    left: -15%;
+    left: -14%;
+    transition: all .2s ease-in-out;
 }
 
+.loginBtn:hover{
+    background-color: #3371D4;
+    color: var(--text-color);
+}
+.loginBtn:hover:after{
+    background-color: #3371D4;
+    color: var(--text-color);
+}
 .registerBtn{
     color: var(--text-color);
     border-radius: .5rem;
     background-color: var(--button-color);
     width: 100%;
     z-index: 1000;
+}
+
+.registerBtn:hover{
+    background-color: #3371D4;
 }
