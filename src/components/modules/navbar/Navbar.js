@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,6 +23,20 @@ function Navbar() {
   const [acountDropDown, setAcountDropDown] = useState(false);
   const [coursesDropDown, setCoursesDropDown] = useState(false);
   const [linksDropDown, setLinksDropDown] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setAcountDropDown(false);
+      setCoursesDropDown(false);
+      setLinksDropDown(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <nav className={styles.navbar}>
@@ -75,12 +89,17 @@ function Navbar() {
             <div className={styles.myAcount}>
               <div
                 className={styles.profileImg}
-                onClick={() => setAcountDropDown(!acountDropDown)}
+                onClick={() => {
+                  setCoursesDropDown(false);
+                  setLinksDropDown(false);
+                  setAcountDropDown(!acountDropDown);
+                }}
               >
                 <Image
                   width={200}
                   height={200}
                   src="/images/default-profile.png"
+                  priority={true}
                   alt="png"
                 ></Image>
                 {acountDropDown && (
@@ -123,7 +142,11 @@ function Navbar() {
             </li>
             <li
               className={styles.navListLink}
-              onClick={() => setCoursesDropDown(!coursesDropDown)}
+              onClick={() => {
+                setCoursesDropDown(!coursesDropDown);
+                setLinksDropDown(false);
+                setAcountDropDown(false);
+              }}
             >
               <span className={styles.dropDown}>
                 دوره های آموزشی
@@ -174,7 +197,11 @@ function Navbar() {
             </li>
             <li
               className={styles.navListLink}
-              onClick={() => setLinksDropDown(!linksDropDown)}
+              onClick={() => {
+                setCoursesDropDown(false);
+                setLinksDropDown(!linksDropDown);
+                setAcountDropDown(false);
+              }}
             >
               <span className={styles.dropDown}>
                 <Link href={"/"}>لینک های مفید</Link>
