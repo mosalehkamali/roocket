@@ -1,0 +1,42 @@
+.roadmaps {
+  margin-top: 6rem;
+  padding: 0 3rem;
+}
+
+.coursesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.coursesTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: yekanFat;
+  font-size: 35px;
+}
+
+.coursesTitle > svg {
+  height: 40px !important;
+  width: 40px !important;
+  margin-bottom: 15px;
+}
+
+.allCoursesBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.allCoursesBtn > svg {
+  margin-bottom: 5px;
+}
+
+.allCoursesBtn:hover {
+  color: var(--button-hover-color-gray);
+}
