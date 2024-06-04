@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Courses.module.css";
 import { PiArrowLeftFill, PiCirclesThreeFill } from "react-icons/pi";
 import Link from "next/link";
+import Cours from "@/components/modules/cards/Course";
+
 function Courses() {
   return (
     <>
@@ -17,7 +19,9 @@ function Courses() {
           </Link>
         </div>
         {/* show lastes courses */}
-        <div className={styles.lastCourses}></div>
+        <div className={styles.lastCourses}>
+          <Cours/>
+        </div>
       </div>
     </>
   );
