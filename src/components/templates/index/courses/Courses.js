@@ -26,8 +26,6 @@ function Courses() {
           <Cours/>
           <Cours/>
           <Cours/>
-          <Cours/>
-          <Cours/>
         </div>
       </div>
     </>
