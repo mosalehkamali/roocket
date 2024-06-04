@@ -37,7 +37,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.startLink1 {
+.startLink:hover {
   background-color: var(--darker-gray);
 }
 
