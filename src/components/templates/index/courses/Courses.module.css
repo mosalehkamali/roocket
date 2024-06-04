@@ -40,3 +40,11 @@
 .allCoursesBtn:hover{
     color: var(--button-hover-color-gray);
 }
+
+
+.lastCourses{
+    display: grid;
+    grid-template-columns: repeat(4, auto) ;
+    grid-template-rows: auto auto;
+    grid-row-gap: 5rem;
+}
