@@ -1,0 +1,126 @@
+.courseCard {
+    position: relative;
+    background-color: var(--card-bg-color);
+    border-radius: 0.5rem;
+    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .5rem;
+  }
+  
+  .cardImg {
+    position: absolute;
+    bottom: -2rem;
+    right: 70%;
+    padding: 0 1rem;
+    width: 100%;
+  }
+  
+  .courseImg {
+    display: inline-block;
+    width: 74px;
+    height: 74px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .courseImg > img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .courseImg:hover.courseImg > img {
+    transform: scale(1.1);
+  }
+  
+  .courseStatus {
+    color: var(--button-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .courseTitle {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .courseTitle:hover {
+    color: var(--button-color);
+  }
+  
+  .courseInfo,
+  .courseRate,
+  .courseDuration,
+  .courseLikes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .courseDuration,
+  .courseLikes {
+    font-size: 12px;
+    margin-left: 0.5rem;
+    gap: 3px !important;
+    padding: 3px 0.5rem 0 0.5rem;
+    border-radius: 0.25rem;
+  }
+  
+  .courseDuration {
+    background-color: var(--shadow-color);
+  }
+  
+  .courseLikes,
+  .courseLikes > svg {
+    color: var(--red-20);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .courseLikes {
+    background-color: var(--red-20-lop);
+  }
+  
+  .courseLikes:hover {
+    background-color: var(--red-20);
+    color: var(--text-color);
+  }
+  
+  .courseLikes:hover.courseLikes > svg {
+    color: var(--text-color);
+  }
+  
+  .courseDuration > svg,
+  .courseLikes > svg {
+    margin-bottom: 5px;
+  }
+  
+  .courseInfoBtn{
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      color: var(--button-color);
+      font-weight: 400;
+      gap: 5px;
+      border-top: 1px var( --shadow-color) solid;
+      margin-top: 1rem;
+      padding: .5rem;
+      transition: all .2s ease-in-out;
+  }
+  
+  .courseInfoBtn>svg{
+      padding-bottom: 5px;
+      width: 20px;
+      height: 20px;
+  }
+  
+  .courseInfoBtn:hover{
+      color: var(--button-hover-color-gray);
+  }
