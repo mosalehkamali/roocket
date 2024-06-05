@@ -3,6 +3,7 @@
   position: fixed;
   bottom: 2rem;
   left: -3rem;
+  z-index: 1000;
   border-radius: 100%;
   background: var(--button-color);
   border: 0;

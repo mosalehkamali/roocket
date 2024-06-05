@@ -1,13 +1,14 @@
 .roadmaps {
   margin-top: 6rem;
   padding: 0 3rem;
+  margin-bottom: 10rem;
 }
 
 .coursesHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .coursesTitle {

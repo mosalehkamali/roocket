@@ -60,3 +60,24 @@ input {
 li {
   list-style-type: none;
 }
+
+.mySwiper{
+  padding-bottom: 3rem !important;
+}
+
+.swiper-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--link-hover-color)!important;
+  height: 9px !important;
+  width: 9px !important;
+}
+
+.swiper-pagination-bullet-active{
+  height: 13px !important;
+  width: 13px !important;
+}
