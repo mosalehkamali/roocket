@@ -21,10 +21,10 @@ function Podcasts() {
       <div className={styles.coursesHeader}>
         <div className={styles.coursesTitle}>
           <PiCirclesThreeFill />
-          <h3>مسیرهای یادگیری</h3>
+          <h3>راکت کست</h3>
         </div>
         <Link href={"/"} className={styles.allCoursesBtn}>
-          <span>مشاهده همه مسیرهای یادگیری</span>
+          <span>مشاهده همه پادکست های صوتی</span>
           <PiArrowLeftFill />
         </Link>
       </div>
