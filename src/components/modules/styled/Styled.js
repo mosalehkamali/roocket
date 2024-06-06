@@ -1,3 +1,5 @@
+"use client"
+
 import styled from "styled-components";
 
 export const SaveButton = styled.button`
@@ -15,3 +17,21 @@ transition: all .2s ease-in-out;
     color: #fff;
 }
 `
+
+export const SocialMediaButton = styled.button`
+width: 2.5rem;
+height: 2.5rem;
+background-color:var(--card-bg-color);
+color:  var( --button-color);
+border: none;
+padding:2px 4px 0 4px;
+border-radius: 0.25rem;
+font-size: 1.2rem;
+text-align: center;
+cursor: pointer;
+transition: all .2s ease-in-out;
+
+&:hover{
+    background-color: var( --button-color);
+    color: #fff;
+}`
