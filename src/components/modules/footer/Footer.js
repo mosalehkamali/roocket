@@ -143,8 +143,8 @@ function Footer() {
                   </li>
                 </ul>
                 <div className={styles.icense}>
-                  {/* <Image height={110} width={100} src={"https://roocket.ir/img/pic/samandehi.png?width=90&height=110"}/>
-                  <Image height={110} width={100} src={"https://roocket.ir/img/pic/enamad.png?width=100&height=110"}/> */}
+                  <Image height={110} width={100} src={"https://roocket.ir/img/pic/samandehi.png?width=90&height=110"}/>
+                  <Image height={110} width={100} src={"https://roocket.ir/img/pic/enamad.png?width=100&height=110"}/>
                 </div>
               </div>
             </div>
