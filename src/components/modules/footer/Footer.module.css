@@ -150,3 +150,7 @@
   border-radius: 50%;
   background-color: var(--card-bg-color);
 }
+
+.icense{
+  margin-top: 2rem;
+}
