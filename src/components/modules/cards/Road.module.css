@@ -3,6 +3,7 @@
     height: 20rem;
     border: 1px var(--darker-gray) solid;
     border-radius: .5rem;
+    user-select: none;
     transition: all .2s ease-in-out;
 }
 
@@ -61,7 +62,7 @@
 .cardBtn{
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     color: var(--button-color);
     font-weight: 700;
     gap: 5px;
