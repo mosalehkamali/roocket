@@ -2,7 +2,6 @@
 
 import React from "react";
 import styles from "./authentication.module.css";
-import styled from "styled-components";
 import { RiKeyLine } from "react-icons/ri";
 import { TiUserAdd } from "react-icons/ti";
 import { FcGoogle } from "react-icons/fc";

@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Register from '@/components/templates/authentication/Register'
 function register() {
   return (
     <>
-     <h1>register page</h1> 
+     <Register/>
     </>
   )
 }
