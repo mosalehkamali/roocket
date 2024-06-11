@@ -30,7 +30,7 @@ export const verifyToken = (token) => {
 };
 
 export const refreshTokenGenrator = (data) => {
-  const token = sign({ ...data }, process.env.AccessTokenPrivateKey, {
+  const token = sign({ ...data }, process.env.RefreshTokenPrivateKey, {
     algorithm: "HS256",
     expiresIn: "15d",
   });
