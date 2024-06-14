@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styles from "./authentication.module.css";
 import { RiKeyLine } from "react-icons/ri";
 import { TiUserAdd } from "react-icons/ti";
@@ -9,8 +9,10 @@ import { useForm } from "react-hook-form";
 import Image from "next/image";
 import Link from "next/link";
 import { PageButton, SaveButton } from "@/components/modules/styled/Styled";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Register() {
+  const [isRecaptchaValide, setIsRecaptchaValide] = useState(false);
   const {
     register,
     handleSubmit,
@@ -20,6 +22,10 @@ function Register() {
 
   const formSubmitHandler = (data) => {
     console.log(data);
+  };
+
+  const verifyRecaptcha = () => {
+    setIsRecaptchaValide(true);
   };
 
   return (
@@ -125,8 +131,17 @@ function Register() {
           <div className={styles.inputError}>
             {errors.validatePassword && errors.validatePassword.message}
           </div>
-          <SaveButton style={{ fontSize: "1rem", margin: "1rem 0 0 0" }}>
-            ورود
+          <div>
+            <ReCAPTCHA
+              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+              onChange={verifyRecaptcha}
+            />
+          </div>
+          <SaveButton
+            disabled={!isRecaptchaValide}
+            style={{ fontSize: "1rem", margin: "1rem 0 0 0" }}
+          >
+            ثبت‌نام
           </SaveButton>
         </form>
       </div>
