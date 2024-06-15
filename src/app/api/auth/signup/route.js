@@ -71,7 +71,7 @@ export async function POST(req) {
     const refreshToken = refreshTokenGenrator({ email });
 
     const headers = new Headers();
-    
+
     headers.append("Set-Cookie", `token=${token};path=/;httpOnly=true`);
     headers.append(
       "Set-Cookie",
@@ -81,7 +81,7 @@ export async function POST(req) {
     return Response.json(
       { message: "User registered successfully :))" },
       {
-        status: 200,
+        status: 201,
         headers,
       }
     );
