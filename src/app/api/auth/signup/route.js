@@ -65,7 +65,14 @@ export async function POST(req) {
 
     const hashedPassword = await hasher(password);
 
-    await userModel.create({ username, email, password: hashedPassword });
+    const users = userModel.find({});
+
+    await userModel.create({
+      username,
+      email,
+      password: hashedPassword,
+      role: users.length > 0 ? "USER" : "ADMIN",
+    });
 
     const token = tokenGenrator({ email });
     const refreshToken = refreshTokenGenrator({ email });

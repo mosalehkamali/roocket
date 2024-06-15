@@ -10,8 +10,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageButton, SaveButton } from "@/components/modules/styled/Styled";
 import ReCAPTCHA from "react-google-recaptcha";
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
 
 function Register() {
+  const router = useRouter()
   const [isRecaptchaValide, setIsRecaptchaValide] = useState(false);
   const {
     register,
@@ -20,8 +23,52 @@ function Register() {
     formState: { errors },
   } = useForm();
 
-  const formSubmitHandler = (data) => {
+  const formSubmitHandler = async (data) => {
     console.log(data);
+    const res = await fetch("/api/auth/signup",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(data)
+    })
+    switch(res.status){
+      case 201:
+        return  Swal.fire({
+          title:"ثبت نام شما با موفقیت انجام شد",
+          text:"می خواهید به کدام صفحه بروید؟",
+          icon:"success",
+          confirmButtonText:"پنل کاربری",
+          confirmButtonColor:"#4283ed",
+          showCancelButton:true,
+          cancelButtonText:"صفحه اصلی",
+          cancelButtonColor:"#269745",
+          background:"#d2ddec"
+        }).then((resault)=>{
+          if(resault.isConfirmed){
+            router.replace("/p-user")
+          }else if(resault.isDismissed){
+            router.replace("/")
+          }
+        })
+        case 403: 
+        return Swal.fire({
+          title:"خطا در ثبت نام",
+          text:"لطفا اطلاعات خود را چک کنید",
+          icon:"error",
+          confirmButtonText:"تلاش مجدد",
+        })
+        case 422: 
+        return Swal.fire({
+          title:"کاربری با این ایمیل قبلا ثبت نام کرده است",
+          icon:"warning",
+          confirmButtonText:"تلاش مجدد",
+        })
+        case 500: 
+        return Swal.fire({
+          title:"خطای سرور !!!",
+          icon:"error",
+          confirmButtonText:"تلاش مجدد",
+        })
+    }
   };
 
   const verifyRecaptcha = () => {
