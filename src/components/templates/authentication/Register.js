@@ -133,7 +133,7 @@ function Register() {
           </label>
           <input
             type="password"
-            {...register("validatePassword", {
+            {...register("confirmPassword", {
               required: "پسورد خود را تکرار کنید",
               pattern: {
                 value:
@@ -150,7 +150,7 @@ function Register() {
             })}
           />
           <div className={styles.inputError}>
-            {errors.validatePassword && errors.validatePassword.message}
+            {errors.confirmPassword && errors.confirmPassword.message}
           </div>
           <div>
             <ReCAPTCHA
