@@ -73,6 +73,27 @@ function Register() {
           onSubmit={handleSubmit(formSubmitHandler)}
         >
           <label>
+            <span>نام کاربری:</span>
+          </label>
+          <input
+            type="text"
+            {...register("username", {
+              required: "وارد کردن نام کاربری اجباری است",
+              minLength: {
+                value: 4,
+                message: "نام کاربری باید حداقل 4 کاراکتر داشته باشد",
+              },
+              maxLength: {
+                value: 15,
+                message: "نام کاربری حداکثر میتواند 15 کاراکتر داشته باشد",
+              },
+            })}
+          />
+
+          <div className={styles.inputError}>
+            {errors.username && errors.username.message}
+          </div>
+          <label>
             <span>ایمیل:</span>
           </label>
           <input
