@@ -24,7 +24,6 @@ function Register() {
   } = useForm();
 
   const formSubmitHandler = async (data) => {
-    console.log(data);
     const res = await fetch("/api/auth/signup",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
@@ -49,14 +48,14 @@ function Register() {
             router.replace("/")
           }
         })
-        case 403: 
+        case 422: 
         return Swal.fire({
           title:"خطا در ثبت نام",
           text:"لطفا اطلاعات خود را چک کنید",
           icon:"error",
           confirmButtonText:"تلاش مجدد",
         })
-        case 422: 
+        case 409: 
         return Swal.fire({
           title:"کاربری با این ایمیل قبلا ثبت نام کرده است",
           icon:"warning",

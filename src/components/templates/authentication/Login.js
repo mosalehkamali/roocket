@@ -10,8 +10,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageButton, SaveButton } from "@/components/modules/styled/Styled";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 function Login() {
+  const router = useRouter()
   const [isRecaptchaValide, setIsRecaptchaValide] = useState(false);
   const {
     register,
@@ -19,8 +22,45 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  const formSubmitHandler = (data) => {
-    console.log(data);
+  const formSubmitHandler =async (data) => {
+    const res = await fetch("/api/auth/signin",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(data)
+    })
+    switch(res.status){
+      case 200:
+        return  Swal.fire({
+          title:"با موفقیت وارد شدید",
+          text:"می خواهید به کدام صفحه بروید؟",
+          icon:"success",
+          confirmButtonText:"پنل کاربری",
+          confirmButtonColor:"#4283ed",
+          showCancelButton:true,
+          cancelButtonText:"صفحه اصلی",
+          cancelButtonColor:"#269745",
+          background:"#d2ddec"
+        }).then((resault)=>{
+          if(resault.isConfirmed){
+            router.replace("/p-user")
+          }else if(resault.isDismissed){
+            router.replace("/")
+          }
+        })
+        case 422: 
+        return Swal.fire({
+          title:"خطا در ورود",
+          text:"لطفا اطلاعات خود را چک کنید",
+          icon:"error",
+          confirmButtonText:"تلاش مجدد",
+        })
+        case 500: 
+        return Swal.fire({
+          title:"خطای سرور !!!",
+          icon:"error",
+          confirmButtonText:"تلاش مجدد",
+        })
+    }
   };
 
   const verifyRecaptcha = () => {
