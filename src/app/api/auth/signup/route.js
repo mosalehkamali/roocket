@@ -65,7 +65,7 @@ export async function POST(req) {
 
     const hashedPassword = await hasher(password);
 
-    const users = userModel.find({});
+    const users = await userModel.find({});
 
     await userModel.create({
       username,
