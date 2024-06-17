@@ -14,7 +14,7 @@ export const passwordValidator = async (password, hashedPassword) => {
 export const tokenGenrator = (data) => {
   const token = sign({ ...data }, process.env.AccessTokenPrivateKey, {
     algorithm: "HS256",
-    expiresIn: "15d",
+    expiresIn: "15s",
   });
   return token;
 };
@@ -35,6 +35,16 @@ export const refreshTokenGenrator = (data) => {
     expiresIn: "15d",
   });
   return token;
+};
+
+export const verifyRefreshToken = (token) => {
+  try {
+    const payload = verify(token, process.env.RefreshTokenPrivateKey);
+    return payload;
+  } catch (err) {
+    console.log("Verify Refresh Token Error =>", err);
+    return false;
+  }
 };
 
 export const validateEmail = (email) => {
