@@ -12,9 +12,17 @@ import { PageButton, SaveButton } from "@/components/modules/styled/Styled";
 import ReCAPTCHA from "react-google-recaptcha";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
+import { authUser } from "@/utils/helpers";
 
 function Register() {
   const router = useRouter()
+ 
+  const user =  authUser()
+  if(user){
+    router.replace("/")
+  }
+  
+
   const [isRecaptchaValide, setIsRecaptchaValide] = useState(false);
   const {
     register,
