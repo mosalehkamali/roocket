@@ -18,8 +18,10 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaRoute, FaRegUserCircle } from "react-icons/fa";
 import { LiaSwatchbookSolid } from "react-icons/lia";
 import { IoIosLogOut } from "react-icons/io";
+import { authUser } from "@/utils/helpers";
 
 function Navbar() {
+  const user = authUser();
   const [acountDropDown, setAcountDropDown] = useState(false);
   const [coursesDropDown, setCoursesDropDown] = useState(false);
   const [linksDropDown, setLinksDropDown] = useState(false);
@@ -59,80 +61,80 @@ function Navbar() {
             </button>
             <input type="text" placeholder="دنبال چی میگردی ؟" />
           </div>
-          {/* 
-          <div className={styles.loginRegister}>
-            <Link className={styles.loginBtn} href={"/"}>
-              <p>ورود</p>
-              <IoLogIn />
-            </Link>
-            <Link className={styles.registerBtn} href={"/"}>
-              <p>عضویت</p>
-              <TiUserAdd />
-            </Link>
-          </div> */}
+          {user ? (
+            <div className={styles.acountBtns}>
+              <div className={styles.cardsBtn}>
+                <span>1</span>
+                <Link href={"/"}>
+                  <PiHandbagFill />
+                </Link>
+              </div>
+              <div className={styles.cardsBtn}>
+                <span>1</span>
+                <Link href={"/"}>
+                  <HiBell />
+                </Link>
+              </div>
 
-          {/* acount details section */}
-          <div className={styles.acountBtns}>
-            <div className={styles.cardsBtn}>
-              <span>1</span>
-              <Link href={"/"}>
-                <PiHandbagFill />
-              </Link>
-            </div>
-            <div className={styles.cardsBtn}>
-              <span>1</span>
-              <Link href={"/"}>
-                <HiBell />
-              </Link>
-            </div>
+              <div className={styles.myAcount}>
+                <div
+                  className={styles.profileImg}
+                  onClick={() => {
+                    setCoursesDropDown(false);
+                    setLinksDropDown(false);
+                    setAcountDropDown(!acountDropDown);
+                  }}
+                >
+                  <Image
+                    width={200}
+                    height={200}
+                    src="/images/default-profile.png"
+                    priority={true}
+                    alt="png"
+                  ></Image>
+                  {acountDropDown && (
+                    <div className={styles.dropDownBox}>
+                      <ul className={styles.acountDropDownList}>
+                        <li className={styles.dropDownListItem}>
+                          <FaRegUserCircle />
 
-            <div className={styles.myAcount}>
-              <div
-                className={styles.profileImg}
-                onClick={() => {
-                  setCoursesDropDown(false);
-                  setLinksDropDown(false);
-                  setAcountDropDown(!acountDropDown);
-                }}
-              >
-                <Image
-                  width={200}
-                  height={200}
-                  src="/images/default-profile.png"
-                  priority={true}
-                  alt="png"
-                ></Image>
-                {acountDropDown && (
-                  <div className={styles.dropDownBox}>
-                    <ul className={styles.acountDropDownList}>
-                      <li className={styles.dropDownListItem}>
-                        <FaRegUserCircle />
+                          <Link href={"/"}>پنل کاربری</Link>
+                        </li>
+                        <li className={styles.dropDownListItem}>
+                          <IoVideocamOutline />
+                          <Link href={"/"}>دوره ها</Link>
+                        </li>
+                        <li className={styles.dropDownListItem}>
+                          <LuWallet />
 
-                        <Link href={"/"}>پنل کاربری</Link>
-                      </li>
-                      <li className={styles.dropDownListItem}>
-                        <IoVideocamOutline />
-                        <Link href={"/"}>دوره ها</Link>
-                      </li>
-                      <li className={styles.dropDownListItem}>
-                        <LuWallet />
-
-                        <Link href={"/"}>مالی و اشتراک</Link>
-                      </li>
-                      <li className={styles.dropDownListItem}>
-                        <LuFileQuestion />
-                        <Link href={"/"}>پرسش ها</Link>
-                      </li>
-                      <li className={styles.dropDownListItem}>
-                        <IoIosLogOut />
-                        <Link href={"/"}>خروج از حساب</Link>
-                      </li>
-                    </ul>
-                  </div>
-                )}
+                          <Link href={"/"}>مالی و اشتراک</Link>
+                        </li>
+                        <li className={styles.dropDownListItem}>
+                          <LuFileQuestion />
+                          <Link href={"/"}>پرسش ها</Link>
+                        </li>
+                        <li className={styles.dropDownListItem}>
+                          <IoIosLogOut />
+                          <Link href={"/"}>خروج از حساب</Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className={styles.loginRegister}>
+              <Link className={styles.loginBtn} href={"/"}>
+                <p>ورود</p>
+                <IoLogIn />
+              </Link>
+              <Link className={styles.registerBtn} href={"/"}>
+                <p>عضویت</p>
+                <TiUserAdd />
+              </Link>
+            </div>
+          )}
         </div>
 
         <div className={styles.bottonNav}>
