@@ -4,10 +4,13 @@ import {
   tokenGenrator,
   validateEmail,
 } from "@/utils/auth";
+import connectToDB from "base/configs/db";
 import userModel from "base/models/User";
 
 export async function POST(req) {
   try {
+    await connectToDB()
+
     const { email, password } = await req.json();
 
     if (!email.trim() || !password.trim()) {
@@ -44,14 +47,13 @@ export async function POST(req) {
     }
 
     const token = tokenGenrator({ email });
-    const refreshToken = refreshTokenGenrator({ email });
 
     const headers = new Headers();
 
     headers.append("Set-Cookie", `token=${token};path=/;httpOnly=true`);
     headers.append(
       "Set-Cookie",
-      `refreshToken=${refreshToken};path=/;httpOnly=true`
+      `refreshToken=${user.refreshToken};path=/;httpOnly=true`
     );
 
     return Response.json(
