@@ -1,11 +1,11 @@
-import React from 'react'
-import Register from '@/components/templates/authentication/Register'
+import React from "react";
+import Register from "@/components/templates/authentication/Register";
 function register() {
   return (
     <>
-     <Register/>
+      <Register />
     </>
-  )
+  );
 }
 
-export default register
+export default register;

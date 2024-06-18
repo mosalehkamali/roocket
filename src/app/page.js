@@ -13,7 +13,7 @@ export default function Home() {
       <Courses />
       <Roadmaps />
       <Podcasts />
-      <Footer/>
+      <Footer />
     </>
   );
 }

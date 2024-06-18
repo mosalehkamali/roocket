@@ -20,12 +20,12 @@ function Courses() {
         </div>
         {/* show lastes courses */}
         <div className={styles.lastCourses}>
-          <Cours/>
-          <Cours/>
-          <Cours/>
-          <Cours/>
-          <Cours/>
-          <Cours/>
+          <Cours />
+          <Cours />
+          <Cours />
+          <Cours />
+          <Cours />
+          <Cours />
         </div>
       </div>
     </>

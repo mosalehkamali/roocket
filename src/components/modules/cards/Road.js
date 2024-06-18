@@ -29,10 +29,10 @@ function Road() {
         </div>
       </div>
 
-        <Link href={"/"}className={styles.cardBtn}>
-          <span>مشاهده اطلاعات مسیریادگیری</span>
-          <PiArrowLeftFill />
-        </Link>
+      <Link href={"/"} className={styles.cardBtn}>
+        <span>مشاهده اطلاعات مسیریادگیری</span>
+        <PiArrowLeftFill />
+      </Link>
     </div>
   );
 }

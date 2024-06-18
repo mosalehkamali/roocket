@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true}>
         {children}
         <ScrollToTop />
-        </body>
+      </body>
     </html>
   );
 }

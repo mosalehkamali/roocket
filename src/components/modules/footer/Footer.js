@@ -10,7 +10,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import {CiMail} from "react-icons/ci"
+import { CiMail } from "react-icons/ci";
 import { PiArrowLeftFill } from "react-icons/pi";
 
 function Footer() {
@@ -125,7 +125,7 @@ function Footer() {
                 <ul className={styles.contactList}>
                   <li className={styles.contactItem}>
                     <div className={styles.liName}>
-                    <CiMail />
+                      <CiMail />
                       <span>ایمیل:</span>
                     </div>
                     <div className={styles.siteLink}>
@@ -134,17 +134,29 @@ function Footer() {
                   </li>
                   <li className={styles.contactItem}>
                     <div className={styles.liName}>
-                    <FaTelegramPlane/>
+                      <FaTelegramPlane />
                       <span>آی دی تلگرام:</span>
                     </div>
                     <div className={styles.siteLink}>
-                      <Link target="_blank" href={"https://t.me/mosaleh777"}>@mosaleh777</Link>
+                      <Link target="_blank" href={"https://t.me/mosaleh777"}>
+                        @mosaleh777
+                      </Link>
                     </div>
                   </li>
                 </ul>
                 <div className={styles.icense}>
-                  <img height={110} width={100} src={"https://roocket.ir/img/pic/samandehi.png"} alt="license"/>
-                  <img height={110} width={100} src={"https://roocket.ir/img/pic/enamad.png"} alt="license"/>
+                  <img
+                    height={110}
+                    width={100}
+                    src={"https://roocket.ir/img/pic/samandehi.png"}
+                    alt="license"
+                  />
+                  <img
+                    height={110}
+                    width={100}
+                    src={"https://roocket.ir/img/pic/enamad.png"}
+                    alt="license"
+                  />
                 </div>
               </div>
             </div>

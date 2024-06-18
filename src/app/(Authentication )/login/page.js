@@ -1,12 +1,12 @@
-import Login from '@/components/templates/authentication/Login'
-import React from 'react'
+import Login from "@/components/templates/authentication/Login";
+import React from "react";
 
 function login() {
   return (
     <>
-     <Login/>
+      <Login />
     </>
-  )
+  );
 }
 
-export default login
+export default login;
