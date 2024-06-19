@@ -81,3 +81,14 @@ li {
   height: 13px !important;
   width: 13px !important;
 }
+
+.loading{
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
