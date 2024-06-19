@@ -4,7 +4,6 @@ function Loading() {
   return (
     <div className='loading'>
      <DotLoader color={'#4283ed'} size={100}  />
-     <h1>Loading.............................................................</h1>
     </div>
   )
 }
