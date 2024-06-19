@@ -30,6 +30,7 @@ function Podcast() {
             width={500}
             height={500}
             src={"/images/default-cours.jpg"}
+            alt="course-image"
           ></Image>
         </Link>
       </div>

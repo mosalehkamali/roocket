@@ -23,6 +23,7 @@ function Course() {
             width={500}
             height={500}
             src={"/images/default-cours.jpg"}
+            alt="course-iamge"
           ></Image>
         </Link>
       </div>

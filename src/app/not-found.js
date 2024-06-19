@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div>
       <div className={styles.contents}>
-        <Image width={500} height={500} src="/assets/404-error.svg"></Image>
+        <Image width={500} height={500} src="/assets/404-error.svg" alt="404-image"></Image>
       </div>
       <div className={styles.texts}>
         <p>صفحه مورد نظر یافت نشد :((</p>
