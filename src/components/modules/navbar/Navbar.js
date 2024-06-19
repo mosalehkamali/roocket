@@ -125,11 +125,11 @@ function Navbar() {
             </div>
           ) : (
             <div className={styles.loginRegister}>
-              <Link className={styles.loginBtn} href={"/"}>
+              <Link className={styles.loginBtn} href={"/login"}>
                 <p>ورود</p>
                 <IoLogIn />
               </Link>
-              <Link className={styles.registerBtn} href={"/"}>
+              <Link className={styles.registerBtn} href={"/register"}>
                 <p>عضویت</p>
                 <TiUserAdd />
               </Link>
