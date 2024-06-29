@@ -1,0 +1,78 @@
+.courseHeader {
+    background-color: var(--card-bg-color);
+    padding: 2rem 2.5rem;
+    border-radius: 0.5rem;
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .title{
+    font-size:3rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .shortDisc{
+    font-size: 1.25rem;
+    line-height: 24px;
+    font-weight: 400;
+    flex-grow: 2;
+    color: var(--discription-color);
+  }
+
+  .buy{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .price{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: yekanHeavy;
+    font-size: 3rem;
+    font-weight: 700    ;
+    padding-top: 7px;
+  }
+  
+  .buy > button {
+    display: flex;
+  }
+  
+.cardImg {
+    top: -3rem;
+    right: 0;
+    padding: 0 1rem;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .courseImg {
+    display: inline-block;
+    width: 100%;
+    height: 10rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .courseImg > img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .courseImg:hover.courseImg > img {
+    transform: scale(1.1);
+  }
+  
