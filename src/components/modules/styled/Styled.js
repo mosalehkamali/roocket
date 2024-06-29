@@ -37,6 +37,24 @@ export const SocialMediaButton = styled.button`
     color: #fff;
   }
 `;
+export const Regbutton = styled.button`
+  background-color: var(--button-color);
+  color: var(--text-color);
+  border: 1px var(--button-color) solid;
+  padding: 2px 36px ;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  font-family: yekanHeavy;
+  line-height: 1.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--card-bg-color);
+    color: var(--button-color);
+  }
+`;
 
 export const PageButton = styled.button`
   background-color: var(--main-bg-color);
