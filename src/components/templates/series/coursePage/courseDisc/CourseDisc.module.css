@@ -1,0 +1,17 @@
+.courseDisc {
+  background-color: var(--card-bg-color);
+  padding: 2rem 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.courseDisc > h2 {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 1rem;
+}
+
+.courseDisc > p {
+  line-height: 2.2;
+  font-size: 18px;
+  margin: 1.25rem 0;
+}

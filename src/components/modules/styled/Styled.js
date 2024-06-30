@@ -41,7 +41,7 @@ export const Regbutton = styled.button`
   background-color: var(--button-color);
   color: var(--text-color);
   border: 1px var(--button-color) solid;
-  padding: 2px 36px ;
+  padding: 14px 36px ;
   border-radius: 0.25rem;
   font-size: 1.2rem;
   font-family: yekanHeavy;
