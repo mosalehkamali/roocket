@@ -1,0 +1,11 @@
+.CourseSessions {
+  background-color: var(--card-bg-color);
+  padding: 2rem 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.CourseSessions > h2 {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 1rem;
+}
